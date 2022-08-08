@@ -7,10 +7,27 @@ h1, p {
     margin: 0;
 }
 
+
+@font-face {
+    font-family: Regular;
+    src: url('../asset/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: Light;
+    src: url('../asset/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: Bold;
+    src: url('../asset/Poppins-Bold.ttf');
+}
+
+
 body {
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    font-family: Regular;
 }
 
 .container {
@@ -22,6 +39,7 @@ body {
         width: 100%;
         background: dodgerblue;
         h1 {
+            font-family: Bold;
             font-weight: 700;
             color: #fefefe;
         }
@@ -45,6 +63,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 20px;
         padding: 10px;
         background: dodgerblue;
         .image {
@@ -61,6 +80,7 @@ body {
             color: #333;
             font-size: .9rem;
             font-weight: 700;
+            text-transform: uppercase;
             cursor: pointer;
             &:hover {
                 transition: 200ms ease;
@@ -69,6 +89,72 @@ body {
         }
         #upload-image{
             display: none;
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+            filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(167deg) brightness(103%) contrast(99%);
+        }
+    }
+}
+
+.info {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 90%;
+    label {
+        display: flex;
+        gap: 8px;
+        color: whitesmoke;
+        font-size: .9rem;
+        align-items: center;
+        .input {
+            width: 100%;
+        }
+        input[type=text]{ 
+            outline: none;
+            border: none;
+            border-bottom: 1px solid whitesmoke;
+            background: transparent;
+            color: whitesmoke;
+            font-family: Regular;
+            font-size: .9rem;
+
+        }
+    }
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 10px;
+    .legend {
+        color: whitesmoke;
+        font-weight: 700;
+        font-size: 1.30rem;
+        font-family: Bold;
+        width: 100%;
+        border-bottom: 1px solid whitesmoke;
+        text-transform: uppercase;
+    }
+    .add {
+        margin: auto;
+        border: none;
+        padding: 2px;
+        border-radius: 5px;
+        outline: none;
+        background: rgba(255, 255, 255, 0.8);
+        text-transform: uppercase;
+        font-family: Bold;
+        font-size: .8rem; 
+        color: #333;
+        width: 80%;
+        cursor: pointer;
+        &:hover {
+            background: rgba(255, 255, 255, 0.6);
         }
     }
 }

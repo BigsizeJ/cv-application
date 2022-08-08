@@ -1,4 +1,4 @@
-import Left from "./Left";
+import Left from "./left-resume/Left";
 import Right from "./Right";
 
 const Resume = () => {

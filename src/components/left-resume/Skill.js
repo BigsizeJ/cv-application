@@ -16,7 +16,7 @@ const Skill = () => {
 
   return (
     <div className="skill">
-      <h1 className="legend">Skill</h1>
+      <h1 className="legend">Skills</h1>
       <div className="skill-list">
         {skills.length > 0 &&
           skills.map((skill) => <li onClick={typeSkill}>{skill}</li>)}

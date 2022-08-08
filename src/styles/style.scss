@@ -158,3 +158,27 @@ body {
         }
     }
 }
+
+.right {
+    display: flex;
+    margin-top: 20px;
+    .name-objective {
+        padding: 10px 20px;
+        height: 19%;
+        width: 100%;
+        background: rgba(30, 143, 255, 0.1);
+        font-size: 1rem;
+        color: black;
+       .name {
+        border-bottom: 1px solid #333;
+        .position {
+            font-size: 1rem;
+        }
+       }
+       .objective {
+        padding: 10px 0;
+        font-family: Light;
+        font-size: .9rem;
+       }
+    }
+}

@@ -1,5 +1,5 @@
 import Left from "./left-resume/Left";
-import Right from "./Right";
+import Right from "./right-resume/Right";
 
 const Resume = () => {
   return (

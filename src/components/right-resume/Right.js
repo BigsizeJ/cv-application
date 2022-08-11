@@ -1,3 +1,4 @@
+import Education from "./Education";
 import Experience from "./Experience";
 import NameAndObjective from "./NameAndObjective";
 
@@ -6,6 +7,7 @@ const Right = () => {
     <div className="right">
       <NameAndObjective />
       <Experience />
+      <Education />
     </div>
   );
 };

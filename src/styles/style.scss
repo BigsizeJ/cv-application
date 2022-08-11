@@ -287,14 +287,19 @@ body {
     text-transform: uppercase;
 }
 
-.experience-ctn {
+.experience-ctn, .education-ctn {
     display: flex;
     flex-direction: column;
     padding: 20px;
 }
 
-.exp-header {
+.experience-ctn {
+    height: 40%;
+}
+
+.exp-header, .educ-header{
     position: relative;
+    margin-bottom: 20px;
     .header-btn {
         position: absolute;
         top: 0;

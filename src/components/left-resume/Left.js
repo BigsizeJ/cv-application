@@ -1,4 +1,5 @@
 import Information from "./Information";
+import Language from "./Language";
 import Skill from "./Skill";
 
 const Left = () => {
@@ -6,6 +7,7 @@ const Left = () => {
     <div className="left">
       <Information />
       <Skill />
+      <Language />
     </div>
   );
 };

@@ -2,39 +2,99 @@ import React, { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 
 const Skill = () => {
-  const [skills, addSkill] = useState([]);
-  const [addState, setAddState] = useState();
+  const [skills, setSkills] = useState([]);
+
+  const [hoverOnSkill, setHoverOnSkill] = useState(false);
+
+  useEffect(() => {
+    const handleClick = (e) => {
+      if (!e.target.classList.contains("input-skill")) {
+        removeFocus();
+      }
+    };
+    document.addEventListener("click", handleClick);
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, [skills]);
+
+  const removeFocus = () => {
+    setSkills((current) =>
+      current.map((skill) => {
+        return { ...skill, show: false };
+      })
+    );
+  };
 
   const handleClick = () => {
-    addSkill((current) => [
-      ...current,
-      { value: "hehe", key: nanoid(), show: false },
+    if (skills.length >= 6) {
+      alert("Skills cannot exceed 6.");
+      return;
+    }
+    setSkills([
+      ...skills,
+      { value: "Type your skill", key: nanoid(), show: false },
     ]);
   };
 
-  const showInput = (e, key) => {
-    console.log(e.target);
-    console.log(key);
+  const showInput = (key) => {
+    setSkills((current) =>
+      current.map((skill) => {
+        if (skill.key === key) return { ...skill, show: true };
+        else {
+          return skill;
+        }
+      })
+    );
+  };
+
+  const handleChange = (e, key) => {
+    setSkills((current) =>
+      current.map((skill) => {
+        if (skill.key === key) return { ...skill, value: e.target.value };
+        else {
+          return skill;
+        }
+      })
+    );
   };
 
   return (
-    <div className="skill-ctn">
+    <div
+      className="skill-ctn"
+      onMouseOver={() => setHoverOnSkill(true)}
+      onMouseOut={() => {
+        setHoverOnSkill(false);
+      }}
+    >
       <h1 className="legend">Skills</h1>
       <div className="skill-list">
         {skills.length > 0 &&
-          skills.map((skill) => (
-            <li
-              key={skill.key}
-              className="skill"
-              onClick={(e) => showInput(e, skill.key)}
-            >
-              {skill.value}
-            </li>
-          ))}
+          skills.map((skill) =>
+            skill.show ? (
+              <input
+                key={skill.key}
+                type="text"
+                value={skill.value}
+                className="input-skill"
+                onChange={(e) => handleChange(e, skill.key)}
+              ></input>
+            ) : (
+              <li
+                key={skill.key}
+                className="input-skill skill"
+                onClick={() => showInput(skill.key)}
+              >
+                {skill.value}
+              </li>
+            )
+          )}
       </div>
-      <button className="add" onClick={handleClick}>
-        Add Skill
-      </button>
+      {hoverOnSkill && (
+        <button className="add" onClick={handleClick}>
+          Add Skill
+        </button>
+      )}
     </div>
   );
 };

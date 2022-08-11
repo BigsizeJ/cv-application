@@ -38,6 +38,7 @@ const Skill = () => {
   };
 
   const showInput = (key) => {
+    removeFocus();
     setSkills((current) =>
       current.map((skill) => {
         if (skill.key === key) return { ...skill, show: true };

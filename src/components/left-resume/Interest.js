@@ -34,6 +34,7 @@ const Interest = () => {
   };
 
   const showInput = (key) => {
+    removeFocus();
     setInterest((current) =>
       current.map((inter) => {
         if (inter.key === key) return { ...inter, show: true };

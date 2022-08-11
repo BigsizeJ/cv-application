@@ -34,6 +34,7 @@ const Language = () => {
   };
 
   const showInput = (key) => {
+    removeFocus();
     setLanguages((current) =>
       current.map((lang) => {
         if (lang.key === key) return { ...lang, show: true };

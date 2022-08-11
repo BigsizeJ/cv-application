@@ -295,7 +295,6 @@ body {
 
 .exp-header {
     position: relative;
-
     .header-btn {
         position: absolute;
         top: 0;
@@ -309,7 +308,74 @@ body {
         cursor: pointer;
         &:hover {
             transition: 200ms ease;
-            color: rgba(30, 143, 255, 0.8);
+            color: rgba(30, 143, 255, 0.6);
         }
     }
+}
+
+.exp {
+    display: flex;
+    padding: 10px 20px;
+    .exp-left {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5px;
+        .date {
+            font-family: Light;
+            font-size: .8rem;
+        }
+        .position {
+            font-weight: 700;
+            font-size: .9rem;
+        }
+        width: 40%;
+    }
+    .exp-right { 
+        display: flex;
+        flex-direction: column;
+        gap: 1.5px;
+        .company {
+            font-family: Bold;
+            font-size: 1rem;
+        }
+        .address {
+            font-style: italic;
+            font-family: Light;
+            font-size: .8rem;
+        }
+        .detail {
+            font-size: .7rem;
+        }
+        width: 60%;
+    }
+}
+
+.date-input, .position-input, .company-input, .address-input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+.date-input {
+    font-family: Light;
+    font-size: .8rem;
+}
+.position-input {
+    font-weight: 700;
+    font-size: .9rem;
+}
+.company-input {
+    font-family: Bold;
+    font-size: 1rem;
+}
+.address-input {
+    font-style: italic;
+    font-family: Light;
+    font-size: .8rem;
+}
+.detail-input {
+    font-size: .7rem;
+    height: 50px;
+    resize: none;
+    border: 1px solid black;
+    outline: none;
 }

@@ -71,6 +71,7 @@ const NameAndObjective = () => {
           <textarea
             className="objective-input input"
             value={objective.value}
+            maxLength="250"
             onChange={(e) => {
               setObjective({ ...objective, value: e.target.value });
             }}

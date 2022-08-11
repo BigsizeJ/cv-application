@@ -4,11 +4,55 @@ import React, { useState, useEffect } from "react";
 const Interest = () => {
   const [onHover, setHover] = useState(false);
   const [interest, setInterest] = useState([]);
+
+  useEffect(() => {
+    const handleClick = (e) => {
+      if (!e.target.classList.contains("input-interest")) {
+        removeFocus();
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, [interest]);
+
+  const removeFocus = () => {
+    setInterest((current) =>
+      current.map((inter) => {
+        return { ...inter, show: false };
+      })
+    );
+  };
+
   const handleClick = () => {
     setInterest([
       ...interest,
       { value: "Type interest", key: nanoid(), show: false },
     ]);
+  };
+
+  const showInput = (key) => {
+    setInterest((current) =>
+      current.map((inter) => {
+        if (inter.key === key) return { ...inter, show: true };
+        else {
+          return inter;
+        }
+      })
+    );
+  };
+
+  const handleChange = (e, key) => {
+    setInterest((current) =>
+      current.map((inter) => {
+        if (inter.key === key) return { ...inter, value: e.target.value };
+        else {
+          return inter;
+        }
+      })
+    );
   };
 
   return (
@@ -26,9 +70,21 @@ const Interest = () => {
         {interest.length > 0 &&
           interest.map((inter) =>
             inter.show ? (
-              <input type="text" key={inter.key} value={inter.value}></input>
+              <input
+                type="text"
+                key={inter.key}
+                className="input-interest"
+                value={inter.value}
+                onChange={(e) => handleChange(e, inter.key)}
+              ></input>
             ) : (
-              <li className="interest">{inter.value}</li>
+              <li
+                key={inter.key}
+                className="input-interest interest"
+                onClick={() => showInput(inter.key)}
+              >
+                {inter.value}
+              </li>
             )
           )}
       </div>

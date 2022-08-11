@@ -25,6 +25,9 @@ const NameAndObjective = () => {
     if (e.target.classList.contains("position")) {
       setPosition({ ...position, show: true });
     }
+    if (e.target.classList.contains("objective")) {
+      setObjective({ ...objective, show: true });
+    }
   };
 
   const removeFocus = () => {
@@ -63,12 +66,27 @@ const NameAndObjective = () => {
           </p>
         )}
       </div>
-      <p className="input objective">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-        nisl augue, hendrerit a consequat ac, sagittis vel ligula. Cras felis
-        nisi, pulvinar eu accumsan id, ornare hendrerit enim. Suspendisse leo
-        lectus, sollicitudin sit amet tortor at, auctor rutrum sapien.
-      </p>
+      <div className="objective">
+        {objective.show ? (
+          <textarea
+            className="objective-input input"
+            value={objective.value}
+            onChange={(e) => {
+              setObjective({ ...objective, value: e.target.value });
+            }}
+          ></textarea>
+        ) : (
+          <p className="input objective" onClick={handleClick}>
+            {objective.value.length <= 0
+              ? `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque nisl augue, hendrerit a consequat ac, sagittis vel
+              ligula. Cras felis nisi, pulvinar eu accumsan id, ornare hendrerit
+              enim. Suspendisse leo lectus, sollicitudin sit amet tortor at,
+              auctor rutrum sapien.`
+              : objective.value}
+          </p>
+        )}
+      </div>
     </div>
   );
 };

@@ -161,6 +161,7 @@ body {
     gap: 10px;
 }
 
+
 .skill-list, .lang-list, .interest-list {
     display: flex;
     flex-direction: column;
@@ -262,4 +263,25 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px;
+}
+
+.exp-header {
+    position: relative;
+
+    .header-btn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 10px;
+        border: none;
+        font-size: .9rem;
+        background: none;
+        font-family: Bold;
+        color: dodgerblue;
+        cursor: pointer;
+        &:hover {
+            transition: 200ms ease;
+            color: rgba(30, 143, 255, 0.8);
+        }
+    }
 }

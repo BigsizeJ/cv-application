@@ -1,9 +1,23 @@
 import React, { useState, useEffect } from "react";
 
 const Experience = () => {
+  const [onHover, setHover] = useState(false);
+  const [experience, setExperience] = useState([]);
+
+  useEffect(() => {
+    return () => {};
+  }, []);
+
   return (
     <div className="experience-ctn">
-      <h1 className="right-legend">Work Experience</h1>
+      <div
+        className="exp-header"
+        onMouseOver={() => setHover(true)}
+        onMouseOut={() => setHover(false)}
+      >
+        <h1 className="right-legend">Work Experience</h1>
+        {onHover && <button className="header-btn">Add Experience</button>}
+      </div>
     </div>
   );
 };

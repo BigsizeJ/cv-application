@@ -27,6 +27,10 @@ const Language = () => {
   ];
 
   const handleClick = () => {
+    if (languages.length >= 5) {
+      alert("Language should not exceed in 5");
+      return;
+    }
     setLanguages([
       ...languages,
       { value: "Type your language", key: nanoid(), show: false },
@@ -57,16 +61,23 @@ const Language = () => {
   };
 
   return (
-    <div
-      className="lang-ctn"
-      onMouseOver={() => {
-        setHover(true);
-      }}
-      onMouseOut={() => {
-        setHover(false);
-      }}
-    >
-      <h1 className="legend">Language</h1>
+    <div className="lang-ctn">
+      <div
+        className="lang-header"
+        onMouseOver={() => {
+          setHover(true);
+        }}
+        onMouseOut={() => {
+          setHover(false);
+        }}
+      >
+        <h1 className="legend">Language</h1>
+        {isHover && (
+          <button className="add-lang" onClick={handleClick}>
+            +
+          </button>
+        )}
+      </div>
       <div className="lang-list">
         {languages.length > 0 &&
           languages.map((lang) =>
@@ -91,11 +102,6 @@ const Language = () => {
             )
           )}
       </div>
-      {isHover && (
-        <button className="add" onClick={handleClick}>
-          Add Language
-        </button>
-      )}
     </div>
   );
 };

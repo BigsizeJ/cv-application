@@ -27,6 +27,10 @@ const Interest = () => {
   };
 
   const handleClick = () => {
+    if (interest.length >= 4) {
+      alert("Interest should not exceed in 4");
+      return;
+    }
     setInterest([
       ...interest,
       { value: "Type interest", key: nanoid(), show: false },
@@ -66,7 +70,14 @@ const Interest = () => {
         setHover(false);
       }}
     >
-      <h1 className="legend">Interest</h1>
+      <div className="interest-header">
+        <h1 className="legend">Interest</h1>
+        {onHover && (
+          <button className="add-interest" onClick={handleClick}>
+            +
+          </button>
+        )}
+      </div>
       <div className="interest-list">
         {interest.length > 0 &&
           interest.map((inter) =>
@@ -89,11 +100,6 @@ const Interest = () => {
             )
           )}
       </div>
-      {onHover && (
-        <button className="add" onClick={handleClick}>
-          Add Interest
-        </button>
-      )}
     </div>
   );
 };

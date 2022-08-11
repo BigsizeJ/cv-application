@@ -28,7 +28,7 @@ const Skill = () => {
 
   const handleClick = () => {
     if (skills.length >= 6) {
-      alert("Skills cannot exceed 6.");
+      alert("Skills should not exceed in 6.");
       return;
     }
     setSkills([
@@ -61,14 +61,21 @@ const Skill = () => {
   };
 
   return (
-    <div
-      className="skill-ctn"
-      onMouseOver={() => setHoverOnSkill(true)}
-      onMouseOut={() => {
-        setHoverOnSkill(false);
-      }}
-    >
-      <h1 className="legend">Skills</h1>
+    <div className="skill-ctn">
+      <div
+        className="skill-header"
+        onMouseOver={() => setHoverOnSkill(true)}
+        onMouseOut={() => {
+          setHoverOnSkill(false);
+        }}
+      >
+        <h1 className="legend">Skills</h1>
+        {hoverOnSkill && (
+          <button className="add-skill" onClick={handleClick}>
+            +
+          </button>
+        )}
+      </div>
       <div className="skill-list">
         {skills.length > 0 &&
           skills.map((skill) =>
@@ -91,11 +98,6 @@ const Skill = () => {
             )
           )}
       </div>
-      {hoverOnSkill && (
-        <button className="add" onClick={handleClick}>
-          Add Skill
-        </button>
-      )}
     </div>
   );
 };

@@ -161,6 +161,34 @@ body {
     gap: 10px;
 }
 
+.skill-ctn {
+    height: 25%;
+}
+.lang-ctn {
+    height: 20%;
+}
+
+
+.skill-header, .lang-header, .interest-header{
+    position: relative;
+    .add-skill, .add-lang, .add-interest {
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        right: 10px;
+        border: none;
+        background: none;
+        font-size: 1.5rem;
+        font-family: Regular;
+        color:  whitesmoke;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover {
+            transition: 200ms ease;
+            color:  rgba(245, 245, 245, 0.6);
+        }
+    }
+}
 
 .skill-list, .lang-list, .interest-list {
     display: flex;

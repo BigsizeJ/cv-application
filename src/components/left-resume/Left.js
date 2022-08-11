@@ -1,4 +1,5 @@
 import Information from "./Information";
+import Interest from "./Interest";
 import Language from "./Language";
 import Skill from "./Skill";
 
@@ -8,6 +9,7 @@ const Left = () => {
       <Information />
       <Skill />
       <Language />
+      <Interest />
     </div>
   );
 };

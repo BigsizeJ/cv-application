@@ -27,10 +27,7 @@ const Skill = () => {
   };
 
   const handleClick = () => {
-    if (skills.length >= 6) {
-      alert("Skills should not exceed in 6.");
-      return;
-    }
+    if (skills.length >= 6) return;
     setSkills([
       ...skills,
       { value: "Type your skill", key: nanoid(), show: false },

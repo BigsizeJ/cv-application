@@ -27,10 +27,7 @@ const Language = () => {
   ];
 
   const handleClick = () => {
-    if (languages.length >= 5) {
-      alert("Language should not exceed in 5");
-      return;
-    }
+    if (languages.length >= 4) return;
     setLanguages([
       ...languages,
       { value: "Type your language", key: nanoid(), show: false },

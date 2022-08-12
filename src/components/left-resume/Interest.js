@@ -27,10 +27,7 @@ const Interest = () => {
   };
 
   const handleClick = () => {
-    if (interest.length >= 4) {
-      alert("Interest should not exceed in 4");
-      return;
-    }
+    if (interest.length >= 4) return;
     setInterest([
       ...interest,
       { value: "Type interest", key: nanoid(), show: false },

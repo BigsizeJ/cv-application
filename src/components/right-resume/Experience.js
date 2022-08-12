@@ -35,10 +35,7 @@ const Experience = () => {
   };
 
   const handleClick = () => {
-    if (experience.length >= 3) {
-      alert("Experience should not exceed in 3.");
-      return;
-    }
+    if (experience.length >= 3) return;
     setExperience([
       ...experience,
       {
@@ -210,6 +207,7 @@ const Experience = () => {
                     value={exp.detail.value}
                     className="input detail-input"
                     onChange={(e) => handleChange(e, "detail", exp.key)}
+                    maxlength="150"
                   ></textarea>
                 ) : (
                   <p

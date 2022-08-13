@@ -4,18 +4,11 @@ import html2canvas from "html2canvas";
 const Header = () => {
   const Download = async () => {
     const pdf = document.querySelector(".resume");
-    const HTML_WIDTH = pdf.clientWidth;
-    const HTML_HEIGHT = pdf.clientHeight;
-    const doc = new jsPDF("p", "pt", "a4");
-    await html2canvas(pdf, {}).then((canvas) => {
-      doc.addImage(
-        canvas.toDataURL("image/jpeg", 1),
-        "JPG",
-        0,
-        0,
-        HTML_WIDTH,
-        HTML_HEIGHT
-      );
+    const doc = new jsPDF("p", "mm", "a4");
+    const width = doc.internal.pageSize.getWidth();
+    const height = doc.internal.pageSize.getHeight();
+    await html2canvas(pdf, { scale: 5 }).then((canvas) => {
+      doc.addImage(canvas.toDataURL("image/jpeg"), "JPG", 0, 0, width, height);
     });
 
     doc.save("resume.pdf");

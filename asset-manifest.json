@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/cv-application/static/css/main.6cb75ac8.css",
+    "main.js": "/cv-application/static/js/main.3928aae5.js",
+    "static/js/703.4b429978.chunk.js": "/cv-application/static/js/703.4b429978.chunk.js",
+    "static/js/760.4d96f869.chunk.js": "/cv-application/static/js/760.4d96f869.chunk.js",
+    "static/media/Poppins-Light.ttf": "/cv-application/static/media/Poppins-Light.7641a0f76ca9ef6c252c.ttf",
+    "static/media/Poppins-Regular.ttf": "/cv-application/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Poppins-Bold.ttf": "/cv-application/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "index.html": "/cv-application/index.html",
+    "main.6cb75ac8.css.map": "/cv-application/static/css/main.6cb75ac8.css.map",
+    "main.3928aae5.js.map": "/cv-application/static/js/main.3928aae5.js.map",
+    "703.4b429978.chunk.js.map": "/cv-application/static/js/703.4b429978.chunk.js.map",
+    "760.4d96f869.chunk.js.map": "/cv-application/static/js/760.4d96f869.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6cb75ac8.css",
+    "static/js/main.3928aae5.js"
+  ]
+}

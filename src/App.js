@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Resume from "./components/Resume";
 
@@ -10,6 +11,7 @@ const App = () => {
     <div className="container">
       <Header />
       <Resume />
+      <Footer />
     </div>
   );
 };

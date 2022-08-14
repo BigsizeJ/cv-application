@@ -27,6 +27,12 @@ const Information = () => {
     return () => {};
   }, [image]);
 
+  const removeFocus = () => {
+    setEmail({ ...email, show: false });
+    setPhone({ ...phone, show: false });
+    setAddress({ ...address, show: false });
+  };
+
   useEffect(() => {
     const handleClick = (e) => {
       if (!e.target.classList.contains("input")) {
@@ -47,12 +53,6 @@ const Information = () => {
       setPhone({ ...phone, show: true });
     if (e.target.classList.contains("address"))
       setAddress({ ...address, show: true });
-  };
-
-  const removeFocus = () => {
-    setEmail({ ...email, show: false });
-    setPhone({ ...phone, show: false });
-    setAddress({ ...address, show: false });
   };
 
   return (

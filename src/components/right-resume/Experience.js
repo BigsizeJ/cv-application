@@ -5,8 +5,6 @@ const Experience = () => {
   const [onHover, setHover] = useState(false);
   const [experience, setExperience] = useState([]);
 
-  const [show, setShow] = useState([]);
-
   useEffect(() => {
     const handleClick = (e) => {
       if (!e.target.classList.contains("input")) {
